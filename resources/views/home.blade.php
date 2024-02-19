@@ -60,9 +60,9 @@
                                 style="width: 300px; height: 250px;">
                             <div class="absolute inset-0 bg-black opacity-40"></div>
                             <div class="absolute inset-0 flex items-center justify-center">
-                                <button
+                                <a  href="{{route('show.product',$product->id)}}"
                                     class="px-6 py-2 font-bold text-gray-900 bg-white rounded-full hover:bg-gray-300">View
-                                    Product</button>
+                                    Product</a>
                             </div>
                         </div>
 

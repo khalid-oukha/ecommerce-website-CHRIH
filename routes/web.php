@@ -18,9 +18,6 @@ use TCG\Voyager\Facades\Voyager;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
 Route::group(['prefix' => 'admin'], function () {
@@ -29,6 +26,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::group(['middleware' => 'auth'], function () {
 });
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/products', [ProductController::class,'index'])->name('products.index');
 Route::get('/search',[SearchController::class,'search'])->name('search');
+Route::get('/products/{id}', [ProductController::class,'showProduct'])->name('show.product');

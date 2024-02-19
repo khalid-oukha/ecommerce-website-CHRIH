@@ -14,4 +14,9 @@ class ProductController extends Controller
         // dd($products);
         return view("products",compact("products"));
     }
+
+    public function showProduct($id){
+        $product = Product::find($id);
+        return view("singlepage",compact("product"));
+    }
 }
