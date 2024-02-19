@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
 
@@ -30,3 +31,4 @@ Route::group(['middleware' => 'auth'], function () {
 });
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/products', [ProductController::class,'index'])->name('products.index');
+Route::get('/search',[SearchController::class,'search'])->name('search');
