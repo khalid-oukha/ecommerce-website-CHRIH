@@ -10,12 +10,12 @@
 @section('content')
     <div class="py-16">
         <div class="flex  rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
-            <img src=" {{ URL::asset('assets/images/souq.jpg') }}" class="hidden lg:block w-7/12 bg-cover">
+            <img src=" {{ URL::asset('assets/images/Marrakech-Souks.jpg') }}" class="hidden lg:block lg:w-1/2 bg-cover">
 
 
                 <div class="w-full bg-dark-200 p-8 lg:w-1/2">
-                    <h2 class="text-2xl font-semibold text-gray-200 text-center">CHRIH DABA</h2>
-                    <p class="text-xl text-gray-300 text-center">Welcome back!</p>
+                    <h2 class="text-2xl font-semibold text-gray-200 text-center">Santoryo</h2>
+                    <p class="text-xl text-gray-300 text-center">Use your email to reset your password!</p>
                     <a href="#"
                         class="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-orange-100">
                         <div class="px-4 py-3">
@@ -41,7 +41,7 @@
                         <a href="#" class="text-xs text-center text-gray-200 uppercase">or login with email</a>
                         <span class="border-b w-1/5 lg:w-1/4"></span>
                     </div>
-                    <form action="{{ Route('login') }}" method="POST">
+                    <form action="{{ Route('forgetpassword.request') }}" method="POST">
                         @csrf
                         @method('POST')
                     <div class="mt-4">
@@ -50,18 +50,10 @@
                             class="bg-gray-300 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
                             type="email" />
                     </div>
-                    <div class="mt-4">
-                        <div class="flex justify-between">
-                            <label class="block text-gray-300 text-sm font-bold mb-2">Password</label>
-                            <a href="{{ route('forget.passwordform') }}" class="text-xs text-gray-300">Forget Password?</a>
-                        </div>
-                        <input name="password"
-                            class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
-                            type="password" />
-                    </div>
+
                     <div class="mt-8">
                         <button type="submit"
-                            class="bg-orange-300 text-white font-bold py-2 px-4 w-full rounded hover:bg-orange-100">Login</button>
+                            class="bg-orange-300 text-white font-bold py-2 px-4 w-full rounded hover:bg-orange-100">Reset password</button>
                     </div>
                     <div class="mt-4 flex items-center justify-between">
                         <span class="border-b w-1/5 md:w-1/4"></span>

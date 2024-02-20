@@ -171,6 +171,10 @@
                                 <button type="button"
                                     class="w-full mt-8 px-4 py-2 bg-transparent border-2 border-gray-800 text-gray-800 font-bold rounded">Read
                                     all reviews</button>
+
+                                <button type="button"
+                                    class="w-full mt-8 px-4 py-2 bg-transparent border-2 border-gray-800 text-gray-800 font-bold rounded">Read
+                                    all reviews</button>
                             </div>
                         </div>
                     </div>

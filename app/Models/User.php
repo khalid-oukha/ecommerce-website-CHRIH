@@ -41,4 +41,18 @@ class User extends \TCG\Voyager\Models\User
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // public function cart()
+    // {
+    //     return $this->hasOne(Cart::class);
+    // }
+
+
+    public static function getEmailChecked($email){
+        return self::where('email', $email)->first();
+    }
+
+    public static function getTokenSingle($token){
+        return self::where('remember_token', $token)->first();
+    }
 }

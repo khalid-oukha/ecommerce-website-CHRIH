@@ -2,6 +2,7 @@
 
 namespace TCG\Voyager\Models;
 
+use App\Models\Cart;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -51,4 +52,8 @@ class User extends Authenticatable implements UserContract
     {
         return UserFactory::new();
     }
+    // public function cart()
+    // {
+    //     return $this->hasOne(Cart::class);
+    // }
 }

@@ -1,26 +1,115 @@
-<header class="relative z-50 px-4 py-4 bg-primary-400 sm:px-10">
+<header class="relative z-50 px-4 bg-primary-400 sm:px-10">
     <div class='flex flex-wrap items-center w-full gap-4 mx-auto max-w-7xl'>
-        <a  href="{{ route('home') }}"><img  class="max-w-xs w-32"  src="{{ URL::asset('assets/images/logo.png') }}" alt="logo"/>
+        <a href="{{ route('home') }}"><img class="max-w-xs w-32" src="{{ URL::asset('assets/images/logo.png') }}"
+                alt="logo" />
         </a>
         <div class='flex ml-auto lg:order-1'>
-            <button
-                class='flex items-center px-5 py-3 font-semibold transition-all bg-primary-100 rounded-md hover:bg-blue-200'>Get
-                started
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-[14px] fill-current ml-2"
-                    viewBox="0 0 492.004 492.004">
-                    <path
-                        d="M484.14 226.886 306.46 49.202c-5.072-5.072-11.832-7.856-19.04-7.856-7.216 0-13.972 2.788-19.044 7.856l-16.132 16.136c-5.068 5.064-7.86 11.828-7.86 19.04 0 7.208 2.792 14.2 7.86 19.264L355.9 207.526H26.58C11.732 207.526 0 219.15 0 234.002v22.812c0 14.852 11.732 27.648 26.58 27.648h330.496L252.248 388.926c-5.068 5.072-7.86 11.652-7.86 18.864 0 7.204 2.792 13.88 7.86 18.948l16.132 16.084c5.072 5.072 11.828 7.836 19.044 7.836 7.208 0 13.968-2.8 19.04-7.872l177.68-177.68c5.084-5.088 7.88-11.88 7.86-19.1.016-7.244-2.776-14.04-7.864-19.12z"
-                        data-original="#000000" />
-                </svg>
-            </button>
-            <button id="toggleOpen" class='lg:hidden ml-7'>
-                <svg class="w-7 h-7" fill="#000" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                        clip-rule="evenodd"></path>
-                </svg>
-            </button>
+            <div class="mx-auto flex w-full flex-wrap items-center justify-between px-3 lg:container">
+                <!-- Right elements -->
+                <div class="relative flex items-center">
+                    <!-- Cart Icon -->
+                    <a class="mr-4 text-white hover:text-neutral-700 focus:text-neutral-7  "
+                        href="{{ Route('cart.index') }}">
+                        <span class="[&>svg]:w-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="h-5 w-5">
+                                <path
+                                    d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" />
+                            </svg>
+                        </span>
+                    </a>
+                    <a class="mr-4 text-white hover:text-neutral-700 focus:text-neutral-7  "
+                        href="{{ Route('loginform') }}">
+                        <span class="[&>svg]:w-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="h-5 w-5">
+                                <path
+                                    d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" />
+                            </svg>
+                        </span>
+                    </a>
+
+                    <!-- Container with two dropdown menus -->
+                    <div class="relative" data-te-dropdown-ref>
+                        <!-- First dropdown trigger -->
+                        <a class="hidden-arrow mr-4 flex items-center text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                            href="#" id="dropdownMenuButton1" role="button" data-te-dropdown-toggle-ref
+                            aria-expanded="false">
+                            <!-- Dropdown trigger icon -->
+                            <span class="[&>svg]:w-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="h-5 w-5">
+                                    <path fill-rule="evenodd"
+                                        d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                            <!-- Notification counter -->
+                            <span
+                                class="absolute -mt-2.5 ml-2 rounded-[0.37rem] bg-danger px-[0.45em] py-[0.2em] text-[0.6rem] leading-none text-white">1</span>
+                        </a>
+                        <!-- First dropdown menu -->
+                        <ul class="absolute left-auto right-0 z-[1000] float-left m-0 mt-1 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
+                            aria-labelledby="dropdownMenuButton1" data-te-dropdown-menu-ref>
+                            <!-- First dropdown menu items -->
+                            <li>
+                                <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                                    href="#" data-te-dropdown-item-ref>Action</a>
+                            </li>
+                            <li>
+                                <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                                    href="#" data-te-dropdown-item-ref>Another action</a>
+                            </li>
+                            <li>
+                                <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                                    href="#" data-te-dropdown-item-ref>Something else here</a>
+                            </li>
+                        </ul>
+                    </div>
+                        @auth
+                    <!-- Second dropdown container -->
+                    <div class="relative" data-te-dropdown-ref>
+                        <!-- Second dropdown trigger -->
+                        <a class="hidden-arrow flex items-center whitespace-nowrap transition duration-150 ease-in-out motion-reduce:transition-none"
+                            href="#" id="dropdownMenuButton2" role="button" data-te-dropdown-toggle-ref
+                            aria-expanded="false">
+                            <!-- User avatar -->
+                            <img src="{{ asset("storage/" . Auth()->user()->image) }}" class="rounded-full" style="height: 25px; width: 25px" alt="" loading="lazy" />
+                        </a>
+                        <!-- Second dropdown menu -->
+                        <ul class="absolute left-auto right-0 z-[1000] float-left m-0 mt-1 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
+                            aria-labelledby="dropdownMenuButton2" data-te-dropdown-menu-ref>
+                            <!-- Second dropdown menu items -->
+                            <li>
+                                <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                                    href="#" data-te-dropdown-item-ref>{{ Auth()->user()->name }}</a>
+                            </li>
+                            <li>
+                                <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                                    href="#" data-te-dropdown-item-ref>Another action</a>
+                            </li>
+                            <li>
+
+                                    <form action="{{ route('logout') }}" method="POST">
+                                        @csrf
+                                        @method('POST')
+                                        <button type="submit"
+                                        class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                                            >
+                                            <span>logout</span>
+                                        </button>
+                                    </form>
+                            </li>
+                        </ul>
+                    </div>
+                        @endauth
+
+                </div>
+            </div>
+
+
         </div>
+
         <div id="collapseMenu"
             class='max-lg:hidden max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-40 max-lg:before:inset-0'>
             <button id="toggleClose" class='fixed lg:hidden top-4 right-5'>
@@ -36,7 +125,8 @@
             <ul
                 class='lg:!flex lg:ml-12 lg:space-x-6 max-lg:space-y-6 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[250px] max-lg:top-0 max-lg:left-0 max-lg:p-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50'>
                 <li class='px-3 max-lg:border-b max-lg:pb-4 lg:hidden'>
-                    <a  href=""><img  class="max-w-xs w-32"  src="{{ URL::asset('assets/images/logo3.png') }}" alt="logo"/>
+                    <a href=""><img class="max-w-xs w-32" src="{{ URL::asset('assets/images/logo3.png') }}"
+                            alt="logo" />
 
                 </li>
                 <li class='px-3 max-lg:border-b max-lg:py-2'>
@@ -79,4 +169,6 @@
                 </li>
             </ul>
         </div>
+
+
 </header>
