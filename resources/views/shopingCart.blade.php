@@ -34,9 +34,13 @@
                                                 </div>
                                                 <div>
                                                     <p class="text-md font-bold text-[#333]">{{ $product->slug }}</p>
-                                                    <button type="button" class="mt-4 font-semibold text-red-400 text-sm">
-                                                        Remove
-                                                    </button>
+                                                    <form action="{{ route('voyager.product-cart.destroy',$product->id) }}">
+                                                        <button type="button"
+                                                            class="mt-4 font-semibold text-red-400 text-sm">
+                                                            Remove
+                                                        </button>
+                                                    </form>
+
                                                 </div>
                                             </div>
                                         </td>
@@ -83,7 +87,8 @@
                         <li class="flex flex-wrap gap-4 text-md py-4">Shipping <span class="ml-auto font-bold">$4.00</span>
                         </li>
                         <li class="flex flex-wrap gap-4 text-md py-4">Tax <span class="ml-auto font-bold">$4.00</span></li>
-                        <li class="flex flex-wrap gap-4 text-md py-4 font-bold">Total <span class="ml-auto">{{ $totalPrice }}$</span>
+                        <li class="flex flex-wrap gap-4 text-md py-4 font-bold">Total <span
+                                class="ml-auto">{{ $totalPrice }}$</span>
                         </li>
                     </ul>
                     <button type="button"
