@@ -10,12 +10,12 @@ class Product extends Model
     use HasFactory;
     public $table = 'products';
 
-    public function orders()
-    {
-        return $this->belongsToMany(Order::class);
-    }
+    // public function orders()
+    // {
+    //     return $this->belongsToMany(Order::class);
+    // }
     public function cart()
     {
-        return $this->belongsToMany(Order::class);
+        return $this->belongsToMany(Cart::class,'product_cartd');
     }
 }

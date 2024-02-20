@@ -42,10 +42,10 @@ class User extends \TCG\Voyager\Models\User
         'email_verified_at' => 'datetime',
     ];
 
-    // public function cart()
-    // {
-    //     return $this->hasOne(Cart::class);
-    // }
+    public function cart()
+    {
+        return $this->hasOne(Cart::class);
+    }
 
 
     public static function getEmailChecked($email){

@@ -8,34 +8,36 @@
                 <!-- Right elements -->
                 <div class="relative flex items-center">
                     <!-- Cart Icon -->
-                    <a class="mr-4 text-white hover:text-neutral-700 focus:text-neutral-7  "
-                        href="{{ Route('cart.index') }}">
-                        <span class="[&>svg]:w-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                class="h-5 w-5">
-                                <path
-                                    d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" />
-                            </svg>
-                        </span>
-                    </a>
+                    @if (!auth()->check())
+
+
                     <a class="mr-4 text-white hover:text-neutral-700 focus:text-neutral-7  "
                         href="{{ Route('loginform') }}">
                         <span class="[&>svg]:w-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                class="h-5 w-5">
-                                <path
-                                    d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" />
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                <path fill="#ffffff"
+                                    d="M217.9 105.9L340.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L217.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1L32 320c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM352 416l64 0c17.7 0 32-14.3 32-32l0-256c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c53 0 96 43 96 96l0 256c0 53-43 96-96 96l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z" />
                             </svg>
                         </span>
                     </a>
 
-                    <!-- Container with two dropdown menus -->
+                    @endif
+
+                    <a class="mr-4 text-white hover:text-neutral-700 focus:text-neutral-7  "
+                    href="{{ Route('cart.index') }}">
+                    <span class="[&>svg]:w-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="h-5 w-5">
+                            <path
+                                d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" />
+                        </svg>
+                    </span>
+                </a>
                     <div class="relative" data-te-dropdown-ref>
-                        <!-- First dropdown trigger -->
                         <a class="hidden-arrow mr-4 flex items-center text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
                             href="#" id="dropdownMenuButton1" role="button" data-te-dropdown-toggle-ref
                             aria-expanded="false">
-                            <!-- Dropdown trigger icon -->
                             <span class="[&>svg]:w-5">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                     class="h-5 w-5">
@@ -66,43 +68,43 @@
                             </li>
                         </ul>
                     </div>
-                        @auth
-                    <!-- Second dropdown container -->
-                    <div class="relative" data-te-dropdown-ref>
-                        <!-- Second dropdown trigger -->
-                        <a class="hidden-arrow flex items-center whitespace-nowrap transition duration-150 ease-in-out motion-reduce:transition-none"
-                            href="#" id="dropdownMenuButton2" role="button" data-te-dropdown-toggle-ref
-                            aria-expanded="false">
-                            <!-- User avatar -->
-                            <img src="{{ asset("storage/" . Auth()->user()->image) }}" class="rounded-full" style="height: 25px; width: 25px" alt="" loading="lazy" />
-                        </a>
-                        <!-- Second dropdown menu -->
-                        <ul class="absolute left-auto right-0 z-[1000] float-left m-0 mt-1 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
-                            aria-labelledby="dropdownMenuButton2" data-te-dropdown-menu-ref>
-                            <!-- Second dropdown menu items -->
-                            <li>
-                                <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
-                                    href="#" data-te-dropdown-item-ref>{{ Auth()->user()->name }}</a>
-                            </li>
-                            <li>
-                                <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
-                                    href="#" data-te-dropdown-item-ref>Another action</a>
-                            </li>
-                            <li>
+                    @auth
+                        <!-- Second dropdown container -->
+                        <div class="relative" data-te-dropdown-ref>
+                            <!-- Second dropdown trigger -->
+                            <a class="hidden-arrow flex items-center whitespace-nowrap transition duration-150 ease-in-out motion-reduce:transition-none"
+                                href="#" id="dropdownMenuButton2" role="button" data-te-dropdown-toggle-ref
+                                aria-expanded="false">
+                                <!-- User avatar -->
+                                <img src="{{ asset('storage/' . Auth()->user()->image) }}" class="rounded-full"
+                                    style="height: 25px; width: 25px" alt="" loading="lazy" />
+                            </a>
+                            <!-- Second dropdown menu -->
+                            <ul class="absolute left-auto right-0 z-[1000] float-left m-0 mt-1 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
+                                aria-labelledby="dropdownMenuButton2" data-te-dropdown-menu-ref>
+                                <!-- Second dropdown menu items -->
+                                <li>
+                                    <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                                        href="#" data-te-dropdown-item-ref>{{ Auth()->user()->name }}</a>
+                                </li>
+                                <li>
+                                    <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                                        href="#" data-te-dropdown-item-ref>Another action</a>
+                                </li>
+                                <li>
 
                                     <form action="{{ route('logout') }}" method="POST">
                                         @csrf
                                         @method('POST')
                                         <button type="submit"
-                                        class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
-                                            >
+                                            class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30">
                                             <span>logout</span>
                                         </button>
                                     </form>
-                            </li>
-                        </ul>
-                    </div>
-                        @endauth
+                                </li>
+                            </ul>
+                        </div>
+                    @endauth
 
                 </div>
             </div>

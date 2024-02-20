@@ -12,29 +12,35 @@ class CartController extends Controller
 {
     public function index()
     {
-        $user = auth()->user();
-        // $products = Product::whereHas("Order", function($q) {
-        //     $q->where("",1);
-        // }->get();
-        return view("shopingCart");
+        $user = Auth::user();
+        $cart = $user->cart;
+
+        // Check if the user has a cart
+        if ($cart) {
+            $cartProducts = $cart->products;
+            return view('shopingCart', compact('cartProducts'));
+        }
+
+        // Handle the case where the user doesn't have a cart
+        return view('shopingCart', ['cartProducts' => []]);
     }
+
 
     public function addToCART(Request $request)
     {
-        // $user = Auth::user();
+        $user = Auth::user();
+        $product = Product::findOrFail($request->id);
+        $cart = $user->cart;
+        if ($cart === null) {
+            $cart = Cart::create(['user_id' => $user->id]);
+        } else {
+        }
 
-        $product = Product::findOrfail($request->id);
+        // $cart->products()->attach($product->('id'),$product->('price'))
+        $cart->products()->attach($product->id, [
+            'price' => $product->price,
+        ]);
 
-        // $cart = $user->cart;
-
-        // if (!$cart) {
-            $userid = 2;
-           $cart = Cart::create(['user_id' => $userid]);
-        // }
-        // dd($cart);
-
-            // Attach the product to the cart with additional data, such as quantity
-            $cart->products()->sync($request->id);
         return redirect()->back()->with('success', 'Product added to cart successfully');
     }
 }
