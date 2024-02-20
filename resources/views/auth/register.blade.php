@@ -15,10 +15,10 @@
 			<!-- Row -->
 			<div class="w-3/4 xl:w-3/4 lg:w-2/12 flex">
 				<!-- Col -->
-				<img src="{{ URL::asset('assets/images/souq.jpg') }}" class="w-full h-auto bg-gray-400 dark:bg-gray-800 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg">
+				<img src="{{ URL::asset('assets/images/souq.jpg') }}" class="w-full h-auto bg-primary-400  hidden lg:block lg:w-5/12 bg-cover rounded-l-lg">
 				<!-- Col -->
-				<div class="w-full lg:w-7/12 bg-dark-200 dark:bg-gray-700 p-5 rounded-lg lg:rounded-l-none">
-					<h3 class="py-4 text-2xl text-center text-gray-100 dark:text-white">Create an Account!</h3>
+				<div class="w-full lg:w-7/12 bg-primary-400  p-5 rounded-lg lg:rounded-l-none">
+					<h3 class="py-4 text-2xl text-center text-gray-100 ">Create an Account!</h3>
 					<form action="{{ route('register') }}" method="POST" class="px-8 pt-6 pb-8 mb-4  bg-dark-200 rounded">
                         @csrf
                         @method('POST')
@@ -60,7 +60,7 @@
                                     placeholder="******************"
                                     name="password"
                                 />
-								<p class="text-xs italic text-red-500">Please choose a password.</p>
+								{{-- <p class="text-xs italic text-red-500">Please choose a password.</p> --}}
 							</div>
 							<div class="md:ml-2">
 								<label class="block mb-2 text-sm font-bold text-gray-200 dark:text-white" for="c_password">
@@ -77,7 +77,7 @@
 						</div>
 						<div class="mb-6 text-center">
 							<button
-                                class="w-full px-4 py-2 font-bold text-white bg-orange-200 rounded-full hover:bg-orange-100 dark:bg-blue-700 dark:text-white dark:hover:bg-blue-900 focus:outline-none focus:shadow-outline"
+                                class="w-full px-4 py-2 font-bold text-white bg-orange-200 rounded-full hover:bg-orange-100  dark:text-white dark:hover:bg-blue-900 focus:outline-none focus:shadow-outline"
                                 type="submit"
                             >
                                 Register Account

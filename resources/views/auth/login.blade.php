@@ -14,10 +14,10 @@
 
 
                 <div class="w-full bg-dark-200 p-8 lg:w-1/2">
-                    <h2 class="text-2xl font-semibold text-gray-200 text-center">CHRIH DABA</h2>
-                    <p class="text-xl text-gray-300 text-center">Welcome back!</p>
+                    <h2 class="text-2xl font-semibold text-primary-200 text-center">CHRIH DABA</h2>
+                    <p class="text-xl text-primary-300 text-center">Welcome back!</p>
                     <a href="#"
-                        class="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-orange-100">
+                        class="flex items-center justify-center bg-primary-300 mt-4 text-white rounded-lg shadow-md hover:bg-primary-400">
                         <div class="px-4 py-3">
                             <svg class="h-6 w-6" viewBox="0 0 40 40">
                                 <path
@@ -34,26 +34,26 @@
                                     fill="#1976D2" />
                             </svg>
                         </div>
-                        <h1 class="px-4 py-3 w-5/6 text-center text-gray-300 font-bold">Sign in with Google</h1>
+                        <h1 class="px-4 py-3 w-5/6 text-center text-white font-bold">Sign in with Google</h1>
                     </a>
                     <div class="mt-4 flex items-center justify-between">
                         <span class="border-b w-1/5 lg:w-1/4"></span>
-                        <a href="#" class="text-xs text-center text-gray-200 uppercase">or login with email</a>
+                        <a href="#" class="text-xs text-center text-primary-200 uppercase">or login with email</a>
                         <span class="border-b w-1/5 lg:w-1/4"></span>
                     </div>
                     <form action="{{ Route('login') }}" method="POST">
                         @csrf
                         @method('POST')
                     <div class="mt-4">
-                        <label class="block text-gray-300 text-sm font-bold mb-2">Email Address</label>
+                        <label class="block text-primary-300 text-sm font-bold mb-2">Email Address</label>
                         <input name="email"
                             class="bg-gray-300 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
                             type="email" />
                     </div>
                     <div class="mt-4">
                         <div class="flex justify-between">
-                            <label class="block text-gray-300 text-sm font-bold mb-2">Password</label>
-                            <a href="{{ route('forget.passwordform') }}" class="text-xs text-gray-300">Forget Password?</a>
+                            <label class="block text-primary-300 text-sm font-bold mb-2">Password</label>
+                            <a href="{{ route('forget.passwordform') }}" class="text-xs text-primary-300">Forget Password?</a>
                         </div>
                         <input name="password"
                             class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
@@ -61,11 +61,11 @@
                     </div>
                     <div class="mt-8">
                         <button type="submit"
-                            class="bg-orange-300 text-white font-bold py-2 px-4 w-full rounded hover:bg-orange-100">Login</button>
+                            class="bg-primary-300 text-white font-bold py-2 px-4 w-full rounded hover:bg-orange-100">Login</button>
                     </div>
                     <div class="mt-4 flex items-center justify-between">
                         <span class="border-b w-1/5 md:w-1/4"></span>
-                        <a href="#" class="text-xs text-gray-300 uppercase">or sign up</a>
+                        <a href="#" class="text-xs text-primary-300 uppercase">or sign up</a>
                         <span class="border-b w-1/5  md:w-1/4"></span>
                     </div>
                 </form>
