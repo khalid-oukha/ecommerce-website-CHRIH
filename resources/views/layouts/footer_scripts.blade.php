@@ -2,4 +2,5 @@
 <script src="{{ URL::asset('assets/js/mobile_menu.js') }}"></script>
 <script src="{{ URL::asset('assets/js/livesearch.js') }}"></script>
 <script src="{{ URL::asset('assets/js/profiledropdown.js') }}"></script>
+<script src="{{ URL::asset('assets/js/deletefromcart.js') }}"></script>
 
