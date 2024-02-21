@@ -9,6 +9,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\StoreFiltersController;
 use App\Http\Controllers\StripController;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
@@ -97,3 +98,8 @@ Route::post('/register', [AuthController::class, 'register'])->name('newregister
 Route::post('/login', [AuthController::class, 'login'])->name('newlogin');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/dashboard', function () { return view('dashboard'); });
+
+
+// Route::get('/filter-by-categorie',[StoreFiltersController::class,'filterByCategorie'])->name('filter.categorie');
+// Route::post('/filter-by-categorie', [StoreFiltersController::class,'filterByCategorie'])->name('filter.categorie');
+Route::post('/searchBycategorie', [StoreFiltersController::class, 'filterByCategorie'])->name('searchBycategorie');

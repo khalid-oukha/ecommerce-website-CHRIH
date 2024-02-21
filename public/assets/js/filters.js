@@ -4,30 +4,39 @@ $.ajaxSetup({
     }
 });
 
-$(document).on('input', '#search-form',function(e){
-    e.preventDefault();
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
 
-    var search = $('input[name="search"]').val();
-    $.ajax({
-        url: '/search',
-        type: 'GET',
-        data: {
-            search:search
-        },
-
-        success: function(response){
-
-            displayProducts( response.products);
-        }
-
+$(document).ready(function () {
+    $('#categories').change(function () {
+        var categorieId = $(this).val();
+        console.log(categorieId);
+        $.ajax({
+            type: 'POST', // Change this to POST
+            url: '/searchBycategorie',
+            data: {
+                categorie: categorieId
+            },
+            success: function (response) {
+                console.log(response.products);
+                displayProducts(response.products);
+            },
+            error: function (error) {
+                console.error('Error:', error);
+            }
+        });
     });
 });
 
-function displayProducts(products){
+
+function displayProducts(products) {
     let articleContainer = document.getElementById("product_container");
-    articleContainer.innerHTML="";
+    articleContainer.innerHTML = "";
     products.forEach(product => {
-        articleContainer.innerHTML +=`
+        articleContainer.innerHTML += `
         <div class="p-8 bg-white rounded-lg shadow-lg">
         <div class="relative overflow-hidden">
             <img class="object-cover " src="http://127.0.0.1:8000/storage/${product.image}" alt="Product" style="width: 300px; height: 250px;">

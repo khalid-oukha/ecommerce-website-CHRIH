@@ -6,7 +6,7 @@ $.ajaxSetup({
 
 
 $(document).on('click', '#deleteFromCart', function (e) {
-    e.preventDefault(); // Prevent the default form submission behavior
+    e.preventDefault(); 
 
     var productId = $(this).data('product-id'); // Assuming you set a data-product-id attribute
 

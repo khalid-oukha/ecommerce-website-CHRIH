@@ -12,7 +12,7 @@ class SearchController extends Controller
     {
         $search = $request->input("search");
         $products = Product::where('name', 'like', '%' . $search . '%')->get();
-        // dd($products);
+        dd($products);
 
         // $view = view('products', compact('products',))->render();;
         // $pagination = $products->links()->render();
