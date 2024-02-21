@@ -4,6 +4,7 @@ $.ajaxSetup({
     }
 });
 
+
 $(document).on('input', '#search-form',function(e){
     e.preventDefault();
 
@@ -16,7 +17,7 @@ $(document).on('input', '#search-form',function(e){
         },
 
         success: function(response){
-
+            console.log(response.products)
             displayProducts( response.products);
         }
 

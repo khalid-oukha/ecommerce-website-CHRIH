@@ -33,25 +33,19 @@ use TCG\Voyager\Facades\Voyager;
 */
 
 
-Route::get('/login', [AuthController::class, 'loginForm'])->name('login');
-Route::get('/register', [AuthController::class, 'index'])->name('register');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::group(['middleware' => 'auth'], function () {
-});
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/products', [ProductController::class,'index'])->name('products.index');
-Route::get('/search',[SearchController::class,'search'])->name('search');
-Route::get('/products/{id}', [ProductController::class,'showProduct'])->name('show.product');
-Route::get('/cart',[CartController::class,'index'])->name('cart.index');
-Route::Post('/addCart', [CartController::class,'addToCART'])->name('cart.add');
+// Route::group(['middleware' => 'auth'], function () {
+// });
 
 
-Route::get('/login', [LoginController::class,'showLoginForm'])->name('loginform');
-Route::post('/login', [LoginController::class,'login'])->name('login');
+
+
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('loginform');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class,'logout'])->name('logout');
 
 // Registration Routes...
@@ -64,9 +58,7 @@ Route::post('/password/email', [ForgotPasswordController::class, 'ResetPasswordR
 Route::get('reset/{token}', [ResetPasswordController::class,'reset'])->name('password.reset');
 Route::post('/reset', [ResetPasswordController::class,'GetnewPassword'])->name('password.postReset');
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
+
 
 Route::group(['middleware' => 'auth'], function () {
 });
@@ -74,32 +66,16 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/products', [ProductController::class,'index'])->name('products.index');
 Route::get('/search',[SearchController::class,'search'])->name('search');
 Route::get('/products/{id}', [ProductController::class,'showProduct'])->name('show.product');
+
 // cart routes
 Route::get('/cart',[CartController::class,'index'])->name('cart.index');
 Route::Post('/addCart', [CartController::class,'addToCART'])->name('cart.add');
 Route::Delete('/remove-product-cart',[CartController::class,'removeProductCart'])->name('product.destroy');
-// Login routes
-Route::get('/login', [LoginController::class,'showLoginForm'])->name('loginform');
-Route::post('/login', [LoginController::class,'login'])->name('login');
-Route::post('/logout', [LoginController::class,'logout'])->name('logout');
 
-// Registration Routes
-Route::get('/register', [RegisterController::class,'showRegistrationForm'])->name('registerform');
-Route::post('/register', [RegisterController::class,'register'])->name('register');
-
-// Password Reset Routes
-Route::get('/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('forget.passwordform');
-Route::post('/password/email', [ForgotPasswordController::class, 'ResetPasswordRequest'])->name('forgetpassword.request');
-Route::get('reset/{token}', [ResetPasswordController::class,'reset'])->name('password.reset');
-Route::post('/reset', [ResetPasswordController::class,'GetnewPassword'])->name('password.postReset');
 
 Route::get('checkout',[StripController::class,'index'])->name('checkout.index');
-Route::post('/register', [AuthController::class, 'register'])->name('newregister');
-Route::post('/login', [AuthController::class, 'login'])->name('newlogin');
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/dashboard', function () { return view('dashboard'); });
 
 
-// Route::get('/filter-by-categorie',[StoreFiltersController::class,'filterByCategorie'])->name('filter.categorie');
-// Route::post('/filter-by-categorie', [StoreFiltersController::class,'filterByCategorie'])->name('filter.categorie');
+
 Route::post('/searchBycategorie', [StoreFiltersController::class, 'filterByCategorie'])->name('searchBycategorie');
