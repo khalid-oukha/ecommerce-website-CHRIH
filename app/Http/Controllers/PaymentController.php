@@ -2,86 +2,56 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Payment;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\StorePaymentRequest;
-use App\Http\Requests\UpdatePaymentRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        return view('checkout');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+
+    public function checkout(Request $request)
     {
-        //
+        $totalprice = $request->get('price');
+       
+
+        \Stripe\Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
+        $lineItems[] = [
+            'price_data' => [
+                'currency' => 'usd',
+                'product_data' => [
+                    
+                    'name' => "total :",
+                ],
+                'unit_amount' => $totalprice,
+            ],
+            'quantity' => 1,
+        ];
+        $session = \Stripe\Checkout\Session::create([
+            'line_items' => $lineItems,
+            'mode' => 'payment',
+
+            'success_url' => route('checkout.success', [], true) . "?session_id={CHECKOUT_SESSION_ID}",
+            // 'cancel_url' => route('checkout.cancel', [], true),
+        ]);
+        return redirect($session->url);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StorePaymentRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StorePaymentRequest $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Payment  $payment
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Payment $payment)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Payment  $payment
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Payment $payment)
+    public function success()
     {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdatePaymentRequest  $request
-     * @param  \App\Models\Payment  $payment
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdatePaymentRequest $request, Payment $payment)
-    {
-        //
-    }
+        $user = Auth::user();
+        $cart = $user->cart;
+        // dd($cart);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Payment  $payment
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Payment $payment)
-    {
-        //
+
+        $cart->products()->detach();
+        return view('checkout');
     }
 }

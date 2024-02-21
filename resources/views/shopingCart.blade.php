@@ -89,9 +89,12 @@
                                 class="ml-auto">{{ $totalPrice }}$</span>
                         </li>
                     </ul>
-                    <a href="{{ Route('checkout.index') }}"
-                        class="mt-6 text-md px-6 py-2.5 w-full bg-blue-600 hover:bg-blue-700 text-white rounded">
-                    </a>
+                   
+                    <form action="/session" method="POST">
+                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                        <input type="hidden" name="price" value="{{ $totalPrice }}">                       
+                        <button type="submit"  class="mt-6 text-md px-6 py-2.5 w-full bg-blue-600 hover:bg-blue-700 text-white rounded" id="checkout-live-button">Checkout</button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\StripController;
@@ -61,3 +62,8 @@ Route::get('reset/{token}', [ResetPasswordController::class,'reset'])->name('pas
 Route::post('/reset', [ResetPasswordController::class,'GetnewPassword'])->name('password.postReset');
 
 Route::get('checkout',[StripController::class,'index'])->name('checkout.index');
+
+
+
+Route::post('/session', [PaymentController::class,'checkout']);
+Route::get('/success', [PaymentController::class,'success'])->name('checkout.success');
