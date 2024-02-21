@@ -36,11 +36,26 @@ class CartController extends Controller
         } else {
         }
 
-        // $cart->products()->attach($product->('id'),$product->('price'))
         $cart->products()->attach($product->id, [
             'price' => $product->price,
         ]);
 
         return redirect()->back()->with('success', 'Product added to cart successfully');
+    }
+
+
+    public function removeProductCart(Request $request)
+    {
+        $productId = $request->id;
+        $user = Auth::user();
+        $cart = $user->cart;
+    
+        if ($cart) {
+            $cart->products()->detach($productId);
+    
+            return response()->json(['success' => true, 'message' => 'Product removed from cart successfully']);
+        }
+    
+        return response()->json(['success' => false, 'message' => 'User does not have a cart']);
     }
 }

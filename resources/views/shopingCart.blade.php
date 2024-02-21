@@ -25,7 +25,7 @@
                             <tbody class="whitespace-nowrap divide-y">
                                 {{ $totalPrice = 0 }}
                                 @foreach ($cartProducts as $product)
-                                    <tr>
+                                    <tr class="product-container" data-product-id="{{ $product->id }}">
                                         <td class="py-6 px-4">
                                             <div class="flex items-center gap-6 w-max">
                                                 <div class="h-36 shrink-0">
@@ -34,12 +34,9 @@
                                                 </div>
                                                 <div>
                                                     <p class="text-md font-bold text-[#333]">{{ $product->slug }}</p>
-                                                    <form action="{{ route('voyager.product-cart.destroy',$product->id) }}">
-                                                        <button type="button"
-                                                            class="mt-4 font-semibold text-red-400 text-sm">
-                                                            Remove
-                                                        </button>
-                                                    </form>
+                                                    <button id="deleteFromCart" data-product-id="{{ $product->id }}" class="mt-4 font-semibold text-red-400 text-sm">
+                                                        Remove
+                                                    </button>
 
                                                 </div>
                                             </div>
@@ -82,18 +79,19 @@
                 <div class="bg-gray-50 p-10">
                     <h3 class="text-xl font-extrabold text-[#333] border-b pb-4">Order Summary</h3>
                     <ul class="text-[#333] divide-y mt-6">
-                        <li class="flex flex-wrap gap-4 text-md py-4">Subtotal <span class="ml-auto font-bold">$37.00</span>
+                        <li class="flex flex-wrap gap-4 text-md py-4">Subtotal <span
+                                class="ml-auto font-bold">{{ $totalPrice }}$</span>
                         </li>
-                        <li class="flex flex-wrap gap-4 text-md py-4">Shipping <span class="ml-auto font-bold">$4.00</span>
+                        <li class="flex flex-wrap gap-4 text-md py-4">Shipping <span class="ml-auto font-bold">$0.00</span>
                         </li>
-                        <li class="flex flex-wrap gap-4 text-md py-4">Tax <span class="ml-auto font-bold">$4.00</span></li>
+                        <li class="flex flex-wrap gap-4 text-md py-4">Tax <span class="ml-auto font-bold">$0.00</span></li>
                         <li class="flex flex-wrap gap-4 text-md py-4 font-bold">Total <span
                                 class="ml-auto">{{ $totalPrice }}$</span>
                         </li>
                     </ul>
-                    <button type="button"
-                        class="mt-6 text-md px-6 py-2.5 w-full bg-blue-600 hover:bg-blue-700 text-white rounded">Check
-                        out</button>
+                    <a href="{{ Route('checkout.index') }}"
+                        class="mt-6 text-md px-6 py-2.5 w-full bg-blue-600 hover:bg-blue-700 text-white rounded">
+                    </a>
                 </div>
             </div>
         </div>
