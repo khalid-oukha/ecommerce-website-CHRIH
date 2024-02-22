@@ -39,10 +39,6 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-// Route::group(['middleware' => 'auth'], function () {
-// });
-
-
 
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('loginform');
@@ -62,20 +58,22 @@ Route::post('/reset', [ResetPasswordController::class,'GetnewPassword'])->name('
 
 
 Route::group(['middleware' => 'auth'], function () {
+
+    // cart routes
+    Route::get('/cart',[CartController::class,'index'])->name('cart.index');
+    Route::Post('/addCart', [CartController::class,'addToCART'])->name('cart.add');
+    Route::Delete('/remove-product-cart',[CartController::class,'removeProductCart'])->name('product.destroy');
+    Route::get('/dashboard', function () { return view('dashboard'); });
+
 });
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/products', [ProductController::class,'index'])->name('products.index');
 Route::get('/search',[SearchController::class,'search'])->name('search');
 Route::get('/products/{id}', [ProductController::class,'showProduct'])->name('show.product');
 
-// cart routes
-Route::get('/cart',[CartController::class,'index'])->name('cart.index');
-Route::Post('/addCart', [CartController::class,'addToCART'])->name('cart.add');
-Route::Delete('/remove-product-cart',[CartController::class,'removeProductCart'])->name('product.destroy');
 
 
 Route::get('checkout',[StripController::class,'index'])->name('checkout.index');
-Route::get('/dashboard', function () { return view('dashboard'); });
 
 
 
