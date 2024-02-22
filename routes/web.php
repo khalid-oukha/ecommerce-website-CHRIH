@@ -78,3 +78,6 @@ Route::get('checkout',[StripController::class,'index'])->name('checkout.index');
 
 
 Route::post('/searchBycategorie', [StoreFiltersController::class, 'filterByCategorie'])->name('searchBycategorie');
+
+Route::post('/session', [PaymentController::class,'checkout']);
+Route::get('/success', [PaymentController::class,'success'])->name('checkout.success');
