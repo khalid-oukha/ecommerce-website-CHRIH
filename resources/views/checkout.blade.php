@@ -80,7 +80,7 @@
                 </div>
                 <div class="xl:col-span-2 h-max rounded-md p-8 sticky top-0">
                     <h2 class="text-2xl font-bold text-primary-400">Complete your order</h2>
-                    <form class="mt-10">
+                    <form class="mt-10" action="/session" method="POST">
                         <div>
                             <h3 class="text-lg font-bold text-primary-400 mb-6">Personal Details</h3>
                             <div class="grid sm:grid-cols-2 gap-6">
@@ -152,9 +152,14 @@
                             <div class="flex gap-6 max-sm:flex-col mt-10">
                                 <button type="button"
                                     class="rounded-md px-6 py-3 w-full text-sm font-semibold bg-transparent hover:bg-gray-100 border-2 text-primary-400">Cancel</button>
-                                <button type="button"
+                                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+
+                                    <button type="submit"
                                     class="rounded-md px-6 py-3 w-full text-sm font-semibold bg-[#333] text-white hover:bg-[#222]">Complete
                                     Purchase</button>
+
+
+                                   
                             </div>
                         </div>
                     </form>

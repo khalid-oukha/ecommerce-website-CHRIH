@@ -3,11 +3,15 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
+<<<<<<< HEAD
         'reference' => '47f0f745d4c25632c843898d39fac46c0e98b7d8',
         'reference' => 'b78c232ce8552d29bae96ae9a4cffd37d291f541',
         'reference' => '55b09caf7dab76006967c7b6081ca14955f1aded',
         'reference' => 'b15b43e40db542df7a9b66e9201cbff824d2d39d',
         'reference' => '47f0f745d4c25632c843898d39fac46c0e98b7d8',
+=======
+        'reference' => 'aae7372f23c0c372ea6a47973fae876f785a8938',
+>>>>>>> othmane
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -117,9 +121,9 @@
             'dev_requirement' => false,
         ),
         'doctrine/inflector' => array(
-            'pretty_version' => '2.0.9',
-            'version' => '2.0.9.0',
-            'reference' => '2930cd5ef353871c821d5c43ed030d39ac8cfe65',
+            'pretty_version' => '2.0.10',
+            'version' => '2.0.10.0',
+            'reference' => '5817d0659c5b50c9b950feb9af7b9668e2c436bc',
             'type' => 'library',
             'install_path' => __DIR__ . '/../doctrine/inflector',
             'aliases' => array(),
@@ -461,29 +465,33 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
+<<<<<<< HEAD
             'reference' => '47f0f745d4c25632c843898d39fac46c0e98b7d8',
             'reference' => 'b78c232ce8552d29bae96ae9a4cffd37d291f541',
             'reference' => '55b09caf7dab76006967c7b6081ca14955f1aded',
             'reference' => 'b15b43e40db542df7a9b66e9201cbff824d2d39d',
             'reference' => '47f0f745d4c25632c843898d39fac46c0e98b7d8',
+=======
+            'reference' => 'aae7372f23c0c372ea6a47973fae876f785a8938',
+>>>>>>> othmane
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
         'laravel/pint' => array(
-            'pretty_version' => 'v1.13.11',
-            'version' => '1.13.11.0',
-            'reference' => '60a163c3e7e3346a1dec96d3e6f02e6465452552',
+            'pretty_version' => 'v1.14.0',
+            'version' => '1.14.0.0',
+            'reference' => '6b127276e3f263f7bb17d5077e9e0269e61b2a0e',
             'type' => 'project',
             'install_path' => __DIR__ . '/../laravel/pint',
             'aliases' => array(),
             'dev_requirement' => true,
         ),
         'laravel/sail' => array(
-            'pretty_version' => 'v1.27.4',
-            'version' => '1.27.4.0',
-            'reference' => '3047e1a157fad968cc5f6e620d5cbe5c0867fffd',
+            'pretty_version' => 'v1.28.0',
+            'version' => '1.28.0.0',
+            'reference' => 'a05861ca9b04558b1ec1f36cff521a271a259b6c',
             'type' => 'library',
             'install_path' => __DIR__ . '/../laravel/sail',
             'aliases' => array(),

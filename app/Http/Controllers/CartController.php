@@ -14,10 +14,16 @@ class CartController extends Controller
     {
         $user = Auth::user();
         $cart = $user->cart;
-
+        $total_price = 0;
         // Check if the user has a cart
         if ($cart) {
             $cartProducts = $cart->products;
+            foreach($cartProducts as $cartProduct)
+            {
+                $total_price += $cartProduct->price;
+            }
+
+            $cart->$total_price = $total_price;
             return view('shopingCart', compact('cartProducts'));
         }
 
