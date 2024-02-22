@@ -101,7 +101,7 @@
                         lifestyle with the finest offerings across our thoughtfully crafted sections. Start your journey of
                         exploration and discovery at Chrih Daba today</p>
                     <button
-                        class='bg-[#333] hover:bg-[#111] text-white flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8'>Learn
+                        class='bg-[#333] hover:bg-[#111] text-white flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8'>view
                         more
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-[14px] fill-current ml-2"
                             viewBox="0 0 492.004 492.004">
@@ -120,7 +120,7 @@
                                 class="inline-block w-20 p-3 bg-blue-100 rounded-full fill-blue-600" />
 
                             <h3 class="mt-6 mb-2 text-base font-extrabold">{{ $latestCatgorie->name }}</h3>
-                            <a href="javascript:void(0);" class="inline-block font-bold text-blue-600 hover:underline">Learn
+                            <a href="javascript:void(0);" class="inline-block font-bold text-blue-600 hover:underline">view
                                 more</a>
                         </div>
                     @endforeach

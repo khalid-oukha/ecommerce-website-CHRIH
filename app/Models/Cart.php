@@ -12,6 +12,20 @@ class Cart extends Model
     protected $fillable = [
         "user_id","total_price",
     ];
+
+
+    public function calculateTotalPrice()
+    {
+        $products = $this->products;
+
+        $totalPrice = 0;
+
+        foreach ($products as $product) {
+            $totalPrice += $product->pivot->price;
+        }
+
+        return $totalPrice;
+    }
     public function User(){
         return $this->belongsTo(User::class);
     }
