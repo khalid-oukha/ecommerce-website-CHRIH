@@ -41,7 +41,7 @@
                         <a href="#" class="text-xs text-center text-primary-200 uppercase">or login with email</a>
                         <span class="border-b w-1/5 lg:w-1/4"></span>
                     </div>
-                    <form action="{{ Route('login') }}" method="POST">
+                    <form action="{{ route('login') }}" method="POST">
                         @csrf
                         @method('POST')
                     <div class="mt-4">
