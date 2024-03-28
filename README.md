@@ -16,8 +16,8 @@ Welcome to Chrih Daba, an e-commerce platform developed using Laravel and MySQL.
 
 ## Screenshots
 
-![App Screenshot][([https://github.com/khalid-oukha/ecommerce-website-CHRIH/blob/main/screenshots/Capture%20d'%C3%A9cran%202024-03-28%20051837.png](https://github.com/khalid-oukha/ecommerce-website-CHRIH/assets/144746719/67df5bdb-6006-4b83-9462-c172c6b70998)))
-![App Screenshot][(https://github.com/khalid-oukha/ecommerce-website-CHRIH/blob/main/screenshots/screencapture-127-0-0-1-8000-2024-03-28-05_17_29.png))
+![Capture d'écran 2024-03-28 051837](https://github.com/khalid-oukha/ecommerce-website-CHRIH/assets/144746719/67df5bdb-6006-4b83-9462-c172c6b70998)
+
 
 
 ## Tech Stack
